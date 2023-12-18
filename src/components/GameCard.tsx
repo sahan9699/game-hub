@@ -9,7 +9,6 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
- console.log()
 
   return (
     <Card borderRadius={10} overflow={"hidden"}>
