@@ -9,7 +9,7 @@ interface FetchResponce<T> {
   }
 // T = Generic type paramitor
 const useData = <T>(endpoint: string, requestConfig?:AxiosRequestConfig, deps?:[]) => {
-  console.log(deps);
+
     const [data, setData] = useState<T[]>([]);
     const [isLoding, setIsLoding] = useState(false);
     const [error, setError] = useState("");
@@ -18,6 +18,7 @@ const useData = <T>(endpoint: string, requestConfig?:AxiosRequestConfig, deps?:[
         const controller = new AbortController();
 
         setIsLoding(true);
+        setData([]);
         apiClient
             .get<FetchResponce<T>>(endpoint, {signal: controller.signal, ...requestConfig})
             .then((response) => {
