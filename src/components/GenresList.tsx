@@ -23,7 +23,7 @@ const GenresList = ({ onSelectGenra }: Props) => {
           </ListItem>
         ))}
       {data.map((genre: Genre) => (
-        <ListItem my="5px" key={genre.id}>
+        <ListItem my="8px" key={genre.id}>
           <HStack>
             <Image
               src={cropImageUrl(genre.image_background)}
