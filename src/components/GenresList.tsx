@@ -13,7 +13,7 @@ const GenresList = ({ onSelectGenra }: Props) => {
   const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
   const genresSkeletans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  if (error) return;
+  if (error) return null;
   return (
     <>
     <Heading fontSize='2xl' marginBottom={3}> Genres</Heading>

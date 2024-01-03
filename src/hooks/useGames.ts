@@ -23,7 +23,6 @@ export interface Game {
     ordering: gameQuery.sortOrder,
     search: gameQuery.seachText
 
-  }},
-  [gameQuery]);
+  }},[gameQuery]);
 
 export default useGames;

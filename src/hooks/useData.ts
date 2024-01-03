@@ -8,7 +8,7 @@ interface FetchResponce<T> {
     results: T[];
   }
 // T = Generic type paramitor
-const useData = <T>(endpoint: string, requestConfig?:AxiosRequestConfig, deps?:[]) => {
+const useData = <T>(endpoint: string, requestConfig?:AxiosRequestConfig, deps?: any[]) => {
 
     const [data, setData] = useState<T[]>([]);
     const [isLoding, setIsLoding] = useState(false);
