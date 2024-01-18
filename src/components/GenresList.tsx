@@ -13,9 +13,10 @@ import { useState } from "react";
 
 interface Props {
   onSelectGenra: (genre: Genre) => void;
+  selectedGenreId?: number;
 }
 
-const GenresList = ({ onSelectGenra }: Props) => {
+const GenresList = ({ selectedGenreId, onSelectGenra }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
@@ -44,7 +45,7 @@ const GenresList = ({ onSelectGenra }: Props) => {
                 borderRadius="8px"
               />
               <Button
-                fontWeight={selectedGenre === genre.id ? "bold" : "normal"}
+                fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
                 fontSize="lg"
                 whiteSpace="normal"
                 objectFit="contain"
