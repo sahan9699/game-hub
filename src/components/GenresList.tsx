@@ -9,7 +9,6 @@ import {
 import useGenres, { Genre } from "../hooks/useGenres";
 import { cropImageUrl } from "../services/ImageUrl";
 import GenreSkeleton from "./GenreSkeleton";
-import { useState } from "react";
 
 interface Props {
   onSelectGenra: (genre: Genre) => void;
@@ -19,7 +18,6 @@ interface Props {
 const GenresList = ({ selectedGenreId, onSelectGenra }: Props) => {
   const { data, isLoading, error } = useGenres();
 
-  const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
   const genresSkeletans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   if (error) return null;
@@ -52,7 +50,6 @@ const GenresList = ({ selectedGenreId, onSelectGenra }: Props) => {
                 textAlign="left"
                 variant="link"
                 onClick={() => {
-                  setSelectedGenre(genre.id);
                   onSelectGenra(genre);
                 }}
               >
