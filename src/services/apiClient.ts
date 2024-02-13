@@ -23,6 +23,10 @@ class APIClient<T>{
     getAll = (config: AxiosRequestConfig) => {
        return axiosInstens.get<FetchResponce<T>>(this.endpoint,config).then(res => res.data)
     }
+
+    gameDetails = (id: number | string) => {
+        return axiosInstens.get<T>(this.endpoint + '/' + id).then(res => res.data)
+    }
 }
 
 export default APIClient;
