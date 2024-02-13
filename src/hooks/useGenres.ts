@@ -3,13 +3,8 @@ import  {CACHE_KEY_GENRE}  from "../react-query/Constan";
 import genres from "../data/Genres";
 import APIClient from "../services/apiClient";
 import ms from "ms";
+import { Genre } from "../entities/Genre";
 
-
-export interface Genre {
-    id: number,
-    name: string
-    image_background : string
-}
 
 const apiClient = new APIClient<Genre>('/genres')
 
